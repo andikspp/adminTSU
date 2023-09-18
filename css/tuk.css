@@ -1,0 +1,398 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic styles */
+  body {
+    background: linear-gradient(to bottom, #fff, #fff, #fff, #A1CEF8);
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Styles for the navbar */
+  nav {
+    background: linear-gradient(to right, #fff, #A1CEF8);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 1rem;
+  }
+  
+  nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem;
+    position: relative;
+  }
+  
+  /* Styles for hover effect */
+  nav ul a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    opacity: 0.7; /* Set opacity to 0 initially */
+    animation: fade-in 0.2s forwards; /* Apply animation */
+  }
+  
+  @keyframes fade-in {
+    to {
+      opacity: 1; /* Animate opacity to 1 */
+    }
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+  
+    nav li {
+      margin: 0.5rem 0;
+    }
+  }
+  
+  /* Additional styles for the envelope icon in the navbar */
+  nav a i {
+    margin-right: 5px;
+  }
+  
+  /* Additional styles for the logo in the navbar */
+  nav img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  /* Styles for the envelope icon */
+  .envelope-icon {
+    margin-left: auto;
+    display: inline-block;
+    color: #000;
+    transition: color 0.3s ease;;
+  }
+  
+  .envelope-icon:hover {
+    color: #ff0000; /* Color change to red (#ff0000) on hover */
+  }
+  
+  /* Styles for the active menu item */
+  nav li.active a {
+    position: relative;
+  }
+  
+  nav li.active a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    opacity: 0.7;
+  }
+  
+  /* Dropdown Styles */
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    z-index: 1;
+    width: 140px;
+    text-align: center;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  li i {
+    margin-left: 5px;
+  }
+
+  .dropdown.content li {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .dropdown i {
+    margin-left: 5px;
+  }
+  
+  /* Ikon panah ke bawah */
+  .fa-caret-down:before {
+    content: "\f0d7"; /* Kode unicode untuk ikon caret-down */
+    font-family: "Font Awesome 5 Free"; /* Pastikan telah menyertakan Font Awesome dalam proyek Anda */
+  }
+
+  .box {
+    background-color: rgba(113, 66, 174, 0.25); /* Warna RGB: #7142AE, Transparansi: 0.25 */
+    padding: 1rem;
+  }
+
+  .bj {
+    display: flex;
+    align-items: center; /* Untuk mengatur elemen secara vertikal */
+  }
+
+  
+  .back {
+    padding-right: 10px; /* Sesuaikan angka 10px dengan jarak yang diinginkan */
+  }
+  
+  .judul {
+    padding-left: 10px; /* Sesuaikan angka 10px dengan jarak yang diinginkan */
+  }
+
+  .back button {
+    background: #091242;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 20px;
+    margin-left: 30px;
+  }
+
+  .back button:hover {
+    background: #2980b9;
+  }
+
+  .back i {
+    font-size: 40px; /* Adjust the font size as per your preference */
+    color: white;
+  }
+
+
+  .search {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #000; /* Border warna hitam */
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px;
+    margin-left: auto;
+    margin-top: 20px;
+  }
+
+  .search input[type="text"] {
+    border: none;
+    padding: 5px;
+    flex: 1;
+    margin-right: 20px;
+    }
+
+  .search button {
+    background-color: #091242;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .search button:hover {
+    background: #2980b9;
+  }
+
+  /* Jika menggunakan ikon pencarian dari Font Awesome */
+  .search button i {
+    margin-right: 5px;
+  }
+
+  .daftar {
+    display: flex;
+    align-items: center;
+  }
+
+  .daftar button {
+    background-color: #091242;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+
+  .daftar button:hover {
+    background: #2980b9;
+  }
+
+  .daftar button i {
+    margin-right: 5px;
+  }
+
+  .sd {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* pindahkan margin-top ke .container */
+    margin-right: 70px; /* pindahkan margin-right ke .container */
+  }
+
+
+  /* CSS untuk tombol refresh */
+  .refresh button {
+    background: #091242;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-right: 10px; /* Mengatur jarak antara tombol refresh dan tombol filter */
+  }
+
+  /* Saat tombol dihover */
+  .refresh button:hover {
+    background: #2980b9; /* Warna latar belakang tombol saat dihover */
+  }
+
+  /* Saat tombol ditekan/clicked */
+  .refresh button:active {
+    background: #21618c; /* Warna latar belakang tombol saat ditekan */
+    box-shadow: none; /* Hapus efek shadow saat ditekan */
+  }
+
+  /* CSS untuk tombol filter */
+  .filter button {
+    background: #091242;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-right: 10px;
+  }
+
+  /* CSS untuk ikon di dalam tombol filter */
+  .filter i {
+    margin-right: 5px; /* Mengatur jarak antara teks tombol dengan ikon di sebelah kiri */
+  }
+
+  /* Saat tombol filter dihover */
+  .filter button:hover {
+    background: #2980b9;
+  }
+
+  /* Saat tombol filter ditekan/clicked */
+  .filter button:active {
+    background: #21618c;
+    box-shadow: none;
+  }
+
+  /* CSS untuk kontainer tombol refresh dan filter */
+  .rfo {
+    display: flex;
+    align-items: center; /* Mengatur elemen secara vertikal di tengah */
+    margin-top: 80px;
+    justify-content: flex-end;
+  }
+
+  /* CSS untuk tombol "Open" */
+  .open button {
+    background: #091242; /* Warna latar belakang tombol */
+    border: none; /* Hapus border tombol */
+    color: #fff; /* Warna teks tombol */
+    cursor: pointer;
+    padding: 10px 20px; /* Ukuran padding pada tombol */
+    border-radius: 5px; /* Menggunakan border-radius untuk membuat sudut tombol lebih melengkung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Efek shadow untuk memberikan kedalaman pada tombol */
+    margin-right: 10px;
+  }
+
+  /* Saat tombol dihover */
+  .open button:hover {
+    background: #2980b9; /* Warna latar belakang tombol saat dihover */
+  }
+
+  /* Saat tombol ditekan/clicked */
+  .open button:active {
+    background: #21618c; /* Warna latar belakang tombol saat ditekan */
+    box-shadow: none; /* Hapus efek shadow saat ditekan */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 60%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr {
+    background-color: white;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  /* CSS untuk tombol "Open" */
+  .selengkapnya button {
+    background: #091242; /* Warna latar belakang tombol */
+    border: none; /* Hapus border tombol */
+    color: #fff; /* Warna teks tombol */
+    cursor: pointer;
+    padding: 10px 20px; /* Ukuran padding pada tombol */
+    border-radius: 5px; /* Menggunakan border-radius untuk membuat sudut tombol lebih melengkung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Efek shadow untuk memberikan kedalaman pada tombol */
+    margin-right: 10px;
+  }
+
+  .selengkapnya a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Saat tombol dihover */
+  .selengkapnya button:hover {
+    background: #2980b9; /* Warna latar belakang tombol saat dihover */
+  }
+
+  /* Saat tombol ditekan/clicked */
+  .selengkapnya button:active {
+    background: #21618c; /* Warna latar belakang tombol saat ditekan */
+    box-shadow: none; /* Hapus efek shadow saat ditekan */
+  }
+
+
+

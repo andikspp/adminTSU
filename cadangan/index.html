@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, #A1CEF8, #fff, #fff, #A1CEF8);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4B0082;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .checkbox {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .checkbox label {
+            margin-right: 100px;
+        }
+
+        .lupa {
+            text-align: right;
+        }
+
+        .logo {
+            text-align: center;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="Logo.png" alt="Logo TSU" width="200">
+        </div>
+        <h2 class="text-center">Registrasi Akun</h2>
+        <form action="registrasi.js" method="post">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+
+            <div class="checkbox">
+                <input type="checkbox" name="ingat" id="ingat" value="Ingat Saya?">
+                <label for="ingat">Ingat Saya?</label>
+                <a href="#" class="lupa">Lupa Password?</a>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

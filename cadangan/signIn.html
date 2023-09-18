@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, #A1CEF8, #fff, #fff, #A1CEF8);
+        }
+
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            background-color: #4B0082;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 100px;
+        }
+
+        .checkbox {
+            display: inline-block;
+        }
+
+        .checkbox label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .lupa {
+            text-align: right;
+        }
+
+        .checkbox p {
+            display: inline-block;
+            margin-left: 150px;
+        }
+
+        .daftar {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .container img {
+            width: 200px;
+            height: auto;
+            margin-left: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Logo.png" alt="Logo TSU">
+        <h2>Sign In</h2>
+        <form>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <br>
+            <div class="checkbox">
+                <input type="checkbox" name="ingat" id="ingat" value="Ingat Saya?">
+                <label for="ingat">Ingat Saya?</label>
+
+                <p>
+                    <a href="#" class="lupa">Lupa Password?</a>
+                </p>
+            </div>
+            <br>
+            <br>
+            <div class="daftar">
+                <p>
+                    Belum memiliki akun?
+                    <a href="#">Daftar</a>
+                </p>
+            </div>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

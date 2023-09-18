@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Uji Kompetensi</title>
+    <link rel="stylesheet" href="detailTuk.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="tesHome.html"><img src="Logo.png" alt="Logo"></a>
+        <ul>
+          <li><a href="tesHome.html">Beranda</a></li>
+          <li class="dropdown">
+                <a href="#">Training Center <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Kursus 1</a></li>
+                    <li><a href="#">Kursus 2</a></li>
+                    <li><a href="#">Kursus 3</a></li>
+                </ul>
+            </li>
+          <li><a href="#">Tambah Form</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+        <a href="#" class="envelope-icon"><i class="fas fa-envelope"></i></a>
+      </nav>
+
+      <div class="box">
+
+      </div>
+
+      <div class="bj">
+        <div class="back">
+          <button onclick="goBack()">
+            <a href="tuk.html"><i class="fas fa-arrow-left"></i></a>
+          </button>
+        </div>
+        <div class="judul">
+          <h1 style="color: #091242; font-weight: bold;">TES UJI KOMPETENSI</h1>
+        </div>
+      </div>
+
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+
+      <div class="bxj">
+        <h2>Ahli K3 Madya</h2>
+      </div>
+
+      <div class="pd">
+        <h1>Personal Data</h1>
+        <div class="fd">
+          <p><strong>NIK</strong> : 8888888888888888888</p>
+          <p><strong>Nama Lengkap</strong> : Seele Vollerei Aminuddin</p>
+          <p><strong>Institusi</strong> : Wildfire Corp.</p>
+          <p><strong>Tempat Lahir</strong> : Magelang</p>
+          <p><strong>Tanggal Lahir</strong> : 30/09/1965</p>
+          <p><strong>Jenis Kelamin</strong> : Perempuan</p>
+          <p><strong>Kewarganegaraan</strong> : Indonesia</p>
+          <p><strong>Alamat</strong> : Lubang Buaya, Kecamatan Cipayung, Kota Jakarta Timur</p>
+        </div>
+        <div class="cn">
+            <h1>Kontak</h1>
+            <p><strong>No. Telepon</strong> : 081296169848</p>
+            <p><strong>Email</strong> : Vollerei77@honkai.com</p>
+        </div>
+        <div class="edc">
+            <h1>Pendidikan</h1>
+            <p><strong>Gelar</strong> : S3 Pendidikan Dokter</p>
+            <p><strong>Sekolah/Universitas</strong> : Universitas Indonesia</p>
+            <p><strong>Major</strong> : Kedokteran</p>
+        </div>
+        <div class="dp">
+            <h1>Data Perusahaan</h1>
+            <p><strong>Nama Perusahaan</strong> : PT. Gunung Gede Steel</p>
+            <p><strong>Alamat</strong> : Jl. Gunung Gede Jawa Barat, Indonesia</p>
+            <p><strong>No. Telepon</strong> : 025100207777</p>
+            <p><strong>Email</strong> : steel.gununggede2212@gmail.com</p>
+        </div>
+        <div class="dc">
+            <h1>Dokumen</h1>
+            <p><strong>Foto</strong> : <img src="#" alt="Foto Hasil"> </p>
+            <p><strong>Foto KTP</strong> : <img src="#" alt="Foto Hasil"> </p>
+            <p><strong>Ijazah</strong> : <img src="#" alt="Foto Hasil"> </p>
+        </div>
+        <div class="other">
+            <h1>Dokumen Lainnya</h1>
+            <div class="kOther">
+                <p>None</p>
+            </div>
+        </div>
+        <div class="terimatidak">
+          <input type="radio" id="diterima" name="status" value="diterima">
+          <label for="diterima">Diterima</label>
+          <input type="radio" id="tidak_diterima" name="status" value="tidak diterima">
+          <label for="tidak_diterima">Tidak Diterima</label>
+      </div>
+      
+        <div class="komentar">
+            <textarea name="komentar" id="komentar" cols="30" rows="10" placeholder="Masukkan komentar anda"></textarea>
+        </div>
+        <div class="sb">
+            <button>Save & Send</button>
+        </div>
+      </div>
+</body>
+</html>

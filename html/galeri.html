@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galeri</title>
+</head>
+<body>
+  <h1>Galeri</h1>
+  
+  <div>
+    <h2>Gambar-Gambar</h2>
+    <ul id="daftarGaleri"></ul>
+  </div>
+
+  <div>
+    <a href="editGaleri.html">Edit Gambar</a>
+  </div>
+
+  <script>
+    // Menampilkan galeri dari local storage saat halaman dimuat
+    function tampilkanGaleri() {
+      const galeriData = localStorage.getItem('galeri');
+      if (galeriData) {
+        const galeri = JSON.parse(galeriData);
+        const daftarGaleri = document.getElementById('daftarGaleri');
+
+        daftarGaleri.innerHTML = '';
+        galeri.forEach(gambar => {
+          const li = document.createElement('li');
+          li.innerHTML = `<img src="${gambar.url}" style="max-width: 100px; max-height: 100px;">`;
+          daftarGaleri.appendChild(li);
+        });
+      }
+    }
+
+    tampilkanGaleri();
+  </script>
+</body>
+</html>

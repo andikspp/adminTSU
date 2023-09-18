@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Gambar</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <style>
+    /* Menentukan lebar dropdown dan membatasi panjang teks opsi */
+    #gambarSelect {
+      width: 200px; /* Sesuaikan lebar sesuai kebutuhan */
+    }
+    #gambarSelect option {
+      max-width: 150px; /* Batasi panjang teks opsi */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    h1 {
+        text-align: left;
+        margin-left: 40px;
+        margin-top: 30px;
+    }
+    .edit {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .tambah {
+        text-align: center;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <a href="tesHome.html"><img src="../images/Logo.png" alt="Logo"></a>
+        <ul>
+          <li><a href="tesHome.html">Beranda</a></li>
+          <li><a href="#">Tambah Form</a></li>
+          <li class="active"><a href="editGaleri.html">Edit Galeri</a></li>
+        </ul>
+        <div class="kanan">
+          <a href="#" class="envelope-icon"><i class="fas fa-envelope"></i></a>
+          <a href="/logout" class="signout-button">Logout</a>
+        </div>
+      </nav>
+
+      <div class="box">
+
+      </div>
+
+    <h1>Edit Galeri</h1>
+    
+    <div class="edit">
+        <h2>Pilih Gambar untuk Diubah</h2>
+        <select id="gambarSelect"></select>
+        <input type="text" id="gambarUrl" placeholder="URL Gambar Baru">
+        <button onclick="editGambar()">Ubah</button>
+        <button onclick="hapusGambar()">Hapus</button>
+    </div>
+
+    <div class="tambah">
+        <h2>Tambah Gambar Baru</h2>
+        <input type="text" id="gambarUrlBaru" placeholder="URL Gambar Baru">
+        <button onclick="tambahGambar()">Tambah</button>
+    </div>
+
+    <script>
+        // Mendapatkan data galeri dari local storage
+        const galeriData = localStorage.getItem('galeri');
+        const galeri = galeriData ? JSON.parse(galeriData) : [];
+
+        const gambarSelect = document.getElementById('gambarSelect');
+        const gambarUrlInput = document.getElementById('gambarUrl');
+        const gambarUrlBaruInput = document.getElementById('gambarUrlBaru');
+
+        // Menampilkan opsi gambar yang dapat diubah
+        function tampilkanOpsiGambar() {
+            gambarSelect.innerHTML = '<option value="">Pilih Gambar</option>';
+
+            galeri.forEach(gambar => {
+                const option = document.createElement('option');
+                option.value = gambar.id;
+                option.textContent = gambar.url;
+                gambarSelect.appendChild(option);
+            });
+        }
+
+        // Fungsi untuk mengubah gambar
+        function editGambar() {
+        const selectedId = parseInt(gambarSelect.value);
+        const newGambarUrl = gambarUrlInput.value;
+
+        const gambar = galeri.find(gambar => gambar.id === selectedId);
+        if (gambar) {
+            gambar.url = newGambarUrl;
+            localStorage.setItem('galeri', JSON.stringify(galeri));
+            tampilkanOpsiGambar();
+        }
+        }
+
+        // Fungsi untuk menghapus gambar
+        function hapusGambar() {
+        const selectedId = parseInt(gambarSelect.value);
+
+        const gambarIndex = galeri.findIndex(gambar => gambar.id === selectedId);
+        if (gambarIndex !== -1) {
+            galeri.splice(gambarIndex, 1);
+            localStorage.setItem('galeri', JSON.stringify(galeri));
+            tampilkanOpsiGambar();
+        }
+        }
+
+        // Fungsi untuk menambah gambar baru
+        function tambahGambar() {
+            const newGambarUrl = gambarUrlBaruInput.value;
+            const idTerakhir = galeri.length > 0 ? galeri[galeri.length - 1].id : 0;
+            const newGambar = { id: idTerakhir + 1, url: newGambarUrl };
+
+            galeri.push(newGambar);
+            localStorage.setItem('galeri', JSON.stringify(galeri));
+            tampilkanOpsiGambar();
+
+            // Mengosongkan input setelah menambah gambar baru
+            gambarUrlBaruInput.value = '';
+            }
+
+        tampilkanOpsiGambar();
+    </script>
+</body>
+</html>

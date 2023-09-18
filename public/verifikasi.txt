@@ -1,0 +1,133 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const path = require('path');
+const nodemailer = require('nodemailer');
+const crypto = require('crypto');
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const { v4: uuidv4 } = require('uuid');
+
+// env variables
+require('dotenv').config();
+
+const app = express();
+const port = 5500;
+
+// Koneksi ke MongoDB Atlas
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Koneksi ke MongoDB Atlas berhasil');
+  })
+  .catch((err) => {
+    console.error('Koneksi ke MongoDB Atlas gagal', err);
+  });
+
+// Definisi schema dan model untuk data pengguna
+const userSchema = new mongoose.Schema({
+  nama: String,
+  email: String,
+  password: { type: String, required: true },
+  verificationToken: String,
+  isVerified: Boolean
+}, {
+  collection: 'Registrasi'
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Transporter Nodemailer
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.AUTH_EMAIL,
+    pass: process.env.AUTH_PASS,
+  }
+});
+
+// Middleware dan pengaturan lainnya
+
+// Rute untuk halaman beranda
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/signInResponsive.html');
+});
+
+// Rute untuk melakukan proses registrasi
+app.post('/registrasi', async (req, res) => {
+  const { nama, email, password } = req.body;
+
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Buat verification token menggunakan UUID
+    const verificationToken = uuidv4();
+
+    const newUser = new User({
+      nama,
+      email,
+      password: hashedPassword,
+      verificationToken,
+      isVerified: false
+    });
+
+    await newUser.save();
+
+    // Kirim email verifikasi
+    const verificationLink = `http://localhost:5500/verify/${verificationToken}`;
+    const mailOptions = {
+      from: process.env.AUTH_EMAIL,
+      to: email,
+      subject: 'Verifikasi Email',
+      html: `Klik <a href="${verificationLink}">di sini</a> untuk verifikasi email Anda.`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email verifikasi terkirim:', info.response);
+      }
+    });
+
+    // Registrasi berhasil, tampilkan pesan atau redirect
+    res.send(`
+      <script>
+        alert('Registrasi berhasil! Silakan periksa email Anda untuk verifikasi.');
+        window.location.href = '/login';
+      </script>
+    `);
+  } catch (err) {
+    console.error('Gagal menyimpan data pengguna', err);
+    res.status(500).send('Registrasi gagal');
+  }
+});
+
+// Rute untuk halaman verifikasi email
+app.get('/verify/:token', async (req, res) => {
+  const token = req.params.token;
+
+  try {
+    const user = await User.findOne({ verificationToken: token });
+
+    if (!user) {
+      return res.send('Token verifikasi tidak valid.');
+    }
+
+    // Update status verifikasi dan hapus token
+    user.isVerified = true;
+    user.verificationToken = undefined;
+    await user.save();
+
+    // Redirect ke halaman sukses verifikasi
+    res.redirect('/verification-success.html');
+  } catch (err) {
+    console.error('Gagal melakukan verifikasi', err);
+    res.status(500).send('Verifikasi gagal');
+  }
+});
+
+// Rute untuk halaman login, proses login, dll.
+
+app.listen(port, () => {
+  console.log(`Server berjalan di http://localhost:${port}/`);
+});

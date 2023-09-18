@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Uji Kompetensi</title>
+    <link rel="stylesheet" href="tuk.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="tesHome.html"><img src="Logo.png" alt="Logo"></a>
+        <ul>
+          <li><a href="tesHome.html">Beranda</a></li>
+          <li class="dropdown">
+                <a href="#">Training Center <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Kursus 1</a></li>
+                    <li><a href="#">Kursus 2</a></li>
+                    <li><a href="#">Kursus 3</a></li>
+                </ul>
+            </li>
+          <li><a href="#">Tambah Form</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+        <a href="#" class="envelope-icon"><i class="fas fa-envelope"></i></a>
+      </nav>
+
+      <div class="box">
+
+      </div>
+
+      <div class="bj">
+        <div class="back">
+          <button onclick="goBack()">
+            <a href="tesHome.html"><i class="fas fa-arrow-left"></i></a>
+          </button>
+        </div>
+        <div class="judul">
+          <h1 style="color: #091242; font-weight: bold;">TES UJI KOMPETENSI</h1>
+        </div>
+      </div>
+
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+
+      <div class="sd">
+        <div class="daftar">
+          <button type="button">Daftar Uji Kompetensi</button>
+        </div>  
+        <div class="search">
+          <input type="text" placeholder="Search Competency">
+          <button type="submit"><i class="fas fa-search"></i>Search</button>
+        </div>
+      </div>
+
+      <div class="rfo">
+        <div class="refresh">
+          <button onclick="refreshPage()">
+            <i class="fas fa-sync-alt"></i>
+          </button>
+        </div>
+        <div class="filter">
+          <button>
+            <i class="fas fa-filter"></i> Filter
+          </button>
+        </div>
+        <div class="open">
+          <button>
+            Open
+          </button>
+        </div>
+      </div>
+
+      <script>
+        function refreshPage() {
+          // Fungsi untuk merefresh halaman, Anda dapat mengisi kode sesuai kebutuhan Anda
+          location.reload();
+        }
+      </script>
+      
+      <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        <tr>
+          <td>TU20001</td>
+          <td>Seele Vollerei Aminuddin</td>
+          <td>Vollerei@gmail.com</td>
+          <td>Menunggu</td>
+          <td><div class="selengkapnya">
+            <button>
+              <a href="detailTuk.html">Selengkapnya</a>
+            </button>
+          </div></td>
+        </tr>
+        <tr>
+          <td>Baris 1, Kolom 1</td>
+          <td>Baris 1, Kolom 2</td>
+          <td>Baris 1, Kolom 3</td>
+          <td>Baris 1, Kolom 4</td>
+          <td>Baris 1, Kolom 5</td>
+        </tr>
+        <tr>
+          <td>Baris 1, Kolom 1</td>
+          <td>Baris 1, Kolom 2</td>
+          <td>Baris 1, Kolom 3</td>
+          <td>Baris 1, Kolom 4</td>
+          <td>Baris 1, Kolom 5</td>
+        </tr>
+        <tr>
+          <td>Baris 1, Kolom 1</td>
+          <td>Baris 1, Kolom 2</td>
+          <td>Baris 1, Kolom 3</td>
+          <td>Baris 1, Kolom 4</td>
+          <td>Baris 1, Kolom 5</td>
+        </tr>
+        <tr>
+          <td>Baris 1, Kolom 1</td>
+          <td>Baris 1, Kolom 2</td>
+          <td>Baris 1, Kolom 3</td>
+          <td>Baris 1, Kolom 4</td>
+          <td>Baris 1, Kolom 5</td>
+        </tr>
+</body>
+</html>

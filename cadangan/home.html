@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #fff, #fff, #fff, #fff, #fff, #A1CEF8);
+            background-attachment: fixed;
+        }
+
+        .navbar-nav .nav-item.active .nav-link {
+            border-bottom: 2px solid black;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-nav .nav-link {
+            margin-left: 10px;
+            margin-right: 10px;
+            color: black;
+            opacity: 0.7;
+        }
+
+        .navbar-nav {
+            margin-left: 50px;
+        }
+
+        .navbar-brand img {
+            max-width: 100px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .navbar-custom {
+            background: linear-gradient(to right, #fff, #A1CEF8, #A1CEF8, #A1CEF8);
+        }
+
+        #kotakMasuk {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            float: right;
+        }
+
+       .col-12 {
+        background-color: #7142AE;
+       }
+
+       .custom-bg {
+        background-color: #7142AE;
+        height: 30px;
+        opacity: 0.25;
+       }
+
+       .bagianAtas h4 {
+        margin-left: 50px;
+        margin-top: 40px;
+       }
+
+       .bagianAtas p {
+        margin-left: 50px;
+        opacity: 0.7;
+       }
+
+       .custom-bg2 {
+        display: flex;
+        background-color: #A1CEF8;
+        height: 140px;
+        max-width: 80%;
+        margin-top: 80px;
+        border-radius: 20px;
+       }
+
+       .custom-bg5 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        margin-left: 20px;
+        height: 80px;
+        width: 200px;
+        border-radius: 20px;
+       }
+
+       .co1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 50px;
+       }
+
+       .pembatas {
+        border-left: 3px solid black;
+        height: 80px;
+        margin-left: 80px;
+       }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="#"><img src="Logo.png" alt="Logo TSU"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tambah Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontak</a>
+                </li>
+                <li class="nav-item">
+                    <span id="kotakMasuk">
+                        <a class="nav-link" href="#">
+                            <img class="surat" src="envelope.svg" alt="Mail" width="16" height="16">
+                        </a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid custom-bg"></div>
+
+    <div class="content">
+        <div class="bagianAtas">
+            <h4>Selamat Datang, (Admin)!</h4>
+            <p id="tanggal"></p>
+        </div>
+    </div>
+
+    <div class="container-fluid custom-bg2">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="custom-width d-flex align-items-center">
+                <div class="custom-bg5">
+                    <h2>TUK</h2>
+                </div>
+                <div class="co1 ml-3">
+                    <h5>Apply baru</h5>
+                    <p>-</p>
+                </div>
+                <div class="pembatas"></div>
+                <div class="co1 ml-3">
+                    <h5>Belum di cek</h5>
+                    <p>-</p>
+                </div>
+                <div class="pembatas"></div>
+                <div class="co1 ml-3">
+                    <h5>Sedang di cek</h5>
+                    <p>-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid custom-bg2">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="custom-width d-flex align-items-center">
+                <div class="custom-bg5">
+                    <h2>KONSULTASI</h2>
+                </div>
+                <div class="co1 ml-3">
+                    <h5>Apply baru</h5>
+                    <p>-</p>
+                </div>
+                <div class="pembatas"></div>
+                <div class="co1 ml-3">
+                    <h5>Belum di cek</h5>
+                    <p>-</p>
+                </div>
+                <div class="pembatas"></div>
+                <div class="co1 ml-3">
+                    <h5>Sedang di cek</h5>
+                    <p>-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid custom-bg2">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="custom-width d-flex align-items-center">
+                <div class="custom-bg5">
+                    <h2>LISENSI</h2>
+                </div>
+                <div class="co1 ml-3">
+                    <h5>Apply baru</h5>
+                    <p>-</p>
+                </div>
+                <div class="pembatas"></div>
+                <div class="co1 ml-3">
+                    <h5>Belum di cek</h5>
+                    <p>-</p>
+                </div>
+                <div class="pembatas"></div>
+                <div class="co1 ml-3">
+                    <h5>Sedang di cek</h5>
+                    <p>-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        var tanggal = new Date();
+
+        var options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+
+        var tanggalFormatted = tanggal.toLocaleDateString('id-ID', options);
+
+        document.getElementById("tanggal").innerHTML = tanggalFormatted;
+    </script>
+
+</body>
+</html>
